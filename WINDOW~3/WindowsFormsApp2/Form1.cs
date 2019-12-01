@@ -54,16 +54,16 @@ namespace WindowsFormsApp2
             sw.Close();
         }
 
-        private void ListView1_SelectedIndexChanged(object sender, EventArgs e) // ??
+        private void ListView1_SelectedIndexChanged(object sender, EventArgs e) // 리스트뷰 항목 선택 관련
         {
-            bool selected = listView1.SelectedItems.Count > 0;
+            bool selected = listView1.SelectedItems.Count > 0; // 항목 미선택시 추가하기 제외한 버튼 비활성화
             button_remove.Enabled = button_modi.Enabled = selected;
             if (selected == false)
             {
                 ClearInputControl();
                 return;
             }
-            ListViewItem lvi = listView1.SelectedItems[0];
+            ListViewItem lvi = listView1.SelectedItems[0]; // 항목 선택시 텍스트 박스에 들어감
             textBox1.Text = lvi.SubItems[0].Text;
             textBox2.Text = lvi.SubItems[1].Text;
         }
